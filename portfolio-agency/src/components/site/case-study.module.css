@@ -1,0 +1,41 @@
+﻿.galleryBlock {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background:
+    radial-gradient(circle at top left, rgba(200, 255, 0, 0.16), transparent 35%),
+    color-mix(in srgb, var(--background) 85%, var(--foreground) 15%);
+}
+
+.galleryBlock::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, transparent, color-mix(in srgb, var(--background) 32%, transparent)),
+    repeating-linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--foreground) 4%, transparent) 0,
+      color-mix(in srgb, var(--foreground) 4%, transparent) 1px,
+      transparent 1px,
+      transparent 72px
+    );
+  pointer-events: none;
+}
+
+.quotePanel {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: linear-gradient(160deg, color-mix(in srgb, var(--foreground) 6%, transparent), color-mix(in srgb, var(--background) 88%, var(--foreground) 12%));
+}
+
+.quotePanel::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0.45rem;
+  height: 100%;
+  background: #c8ff00;
+}

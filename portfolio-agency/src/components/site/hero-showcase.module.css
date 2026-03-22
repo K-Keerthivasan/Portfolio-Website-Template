@@ -1,0 +1,69 @@
+﻿.heroFrame {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background:
+    linear-gradient(135deg, rgba(200, 255, 0, 0.18), transparent 35%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 65%),
+    var(--surface-strong);
+}
+
+:global(.dark) .heroFrame {
+  background:
+    linear-gradient(135deg, rgba(200, 255, 0, 0.18), transparent 35%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent 65%),
+    #111111;
+}
+
+.heroFrame::before {
+  content: "";
+  position: absolute;
+  inset: 1rem;
+  border: 1px solid var(--border);
+  pointer-events: none;
+}
+
+.noise {
+  position: absolute;
+  inset: 0;
+  opacity: 0.14;
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--foreground) 8%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--foreground) 8%, transparent) 1px, transparent 1px);
+  background-size: 88px 88px;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.line {
+  display: block;
+  overflow: hidden;
+}
+
+.lineInner {
+  display: block;
+  transform: translateY(110%);
+}
+
+.cardRail {
+  position: absolute;
+  right: -2rem;
+  top: 14%;
+  width: min(32vw, 24rem);
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--background) 72%, transparent);
+  backdrop-filter: blur(18px);
+}
+
+@media (max-width: 960px) {
+  .cardRail {
+    position: static;
+    width: 100%;
+    margin-top: 2rem;
+  }
+}

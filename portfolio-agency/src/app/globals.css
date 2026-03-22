@@ -1,0 +1,139 @@
+﻿@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
+  --font-mono: var(--font-sans);
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+}
+
+:root {
+  --background: #f5f0e8;
+  --foreground: #121212;
+  --card: #ece5da;
+  --card-foreground: #121212;
+  --popover: #fffaf3;
+  --popover-foreground: #121212;
+  --primary: #c8ff00;
+  --primary-foreground: #0f0f0f;
+  --secondary: #e2dbd1;
+  --secondary-foreground: #121212;
+  --muted: #ebe4db;
+  --muted-foreground: rgba(18, 18, 18, 0.68);
+  --accent: #c8ff00;
+  --accent-foreground: #0f0f0f;
+  --destructive: #d64a30;
+  --border: rgba(18, 18, 18, 0.14);
+  --input: rgba(18, 18, 18, 0.08);
+  --ring: rgba(200, 255, 0, 0.7);
+  --lime: #7ea000;
+  --surface-soft: rgba(255, 255, 255, 0.42);
+  --surface: rgba(255, 255, 255, 0.62);
+  --surface-strong: rgba(255, 255, 255, 0.82);
+}
+
+.dark {
+  --background: #0f0f0f;
+  --foreground: #f5f0e8;
+  --card: #161616;
+  --card-foreground: #f5f0e8;
+  --popover: #111111;
+  --popover-foreground: #f5f0e8;
+  --primary: #c8ff00;
+  --primary-foreground: #0f0f0f;
+  --secondary: #232323;
+  --secondary-foreground: #f5f0e8;
+  --muted: #191919;
+  --muted-foreground: rgba(245, 240, 232, 0.62);
+  --accent: #c8ff00;
+  --accent-foreground: #0f0f0f;
+  --destructive: #ff5c40;
+  --border: rgba(245, 240, 232, 0.14);
+  --input: rgba(245, 240, 232, 0.08);
+  --ring: rgba(200, 255, 0, 0.65);
+  --lime: #c8ff00;
+  --surface-soft: rgba(255, 255, 255, 0.04);
+  --surface: rgba(255, 255, 255, 0.07);
+  --surface-strong: rgba(255, 255, 255, 0.11);
+}
+
+@utility font-heading {
+  font-family: var(--font-heading), sans-serif;
+}
+
+@utility text-lime {
+  color: var(--lime);
+}
+
+@utility bg-lime {
+  background-color: var(--lime);
+}
+
+@utility border-lime {
+  border-color: var(--lime);
+}
+
+@utility bg-surface-soft {
+  background-color: var(--surface-soft);
+}
+
+@utility bg-surface {
+  background-color: var(--surface);
+}
+
+@utility bg-surface-strong {
+  background-color: var(--surface-strong);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply bg-background font-sans text-foreground antialiased;
+  }
+
+  body {
+    @apply min-h-screen bg-background text-foreground transition-colors duration-300;
+    background-image:
+      radial-gradient(circle at top left, rgba(200, 255, 0, 0.08), transparent 28%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 30%);
+  }
+
+  .dark body {
+    background-image:
+      radial-gradient(circle at top left, rgba(200, 255, 0, 0.06), transparent 28%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 30%);
+  }
+
+  ::selection {
+    background: var(--lime);
+    color: var(--background);
+  }
+}

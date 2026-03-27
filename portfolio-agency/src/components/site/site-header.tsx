@@ -11,7 +11,7 @@ const navItems = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-xl">
+    <header className="sticky z-50 border-b border-border bg-background/90 backdrop-blur-xl [top:var(--k2-demo-top-offset,0px)]">
       <div className="mx-auto flex w-full max-w-[1600px] flex-col gap-4 px-5 py-4 md:flex-row md:items-center md:justify-between md:px-8">
         <Link href="/" className="font-heading text-2xl uppercase tracking-[0.18em] text-lime">
           K2 Digital Media
@@ -34,5 +34,4 @@ export function SiteHeader() {
     </header>
   );
 }
-
 

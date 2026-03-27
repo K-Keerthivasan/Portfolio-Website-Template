@@ -1,6 +1,8 @@
 ﻿import type { Metadata } from "next";
 import { Bebas_Neue, Syne } from "next/font/google";
 
+import { DemoBanner } from "@/components/site/demo-banner";
+
 import "./globals.css";
 
 const bebasNeue = Bebas_Neue({
@@ -45,7 +47,11 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body>{children}</body>
+      <body>
+        <DemoBanner />
+        {children}
+      </body>
     </html>
   );
 }
+
